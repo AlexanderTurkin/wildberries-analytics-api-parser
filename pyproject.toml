@@ -15,6 +15,7 @@ sqlalchemy = "^2.0.30"
 fake-useragent = "^1.5.1"
 pandas = "^2.2.2"
 xlrd = "^2.0.1"
+aiosqlite = "^0.20.0"
 
 
 [build-system]

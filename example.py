@@ -31,23 +31,11 @@ async def sjrpc(wb_client):
             await asyncio.sleep(1)
 
 
-async def main():
-    cookies = { #Скопировать из любого запроса на странице вашего ЛК (F12 - Network)
+async def main(): # Скопировать из любого запроса на странице вашего ЛК (F12 - Network - Cookies - Copy ALL) Firefox
+    cookies = {
         "Request Cookies": {
-            "___wbu": "db8661056",
-            "__zzatw-wb": "MDA0dC0cw7FmBtyZg==I1uDZg==",
-            "_wbauid": "8021056",
-            "cfidsw-wb": "zR112ZySA=",
-            "external-locale": "ru",
-            "wb-id": "gYFijJlNjllMw",
-            "wb-pid": "gYHKwHEVbwFDlRElQgN7a2TrHzi70OQ",
-            "wb-sid": "03c73069e3",
-            "WBTokenV3": "eyJhbGciOiJSUzI1Nun7Yhu_pXSn0d5-DMLg-",
-            "wbx-validation-key": "7f6106ec091bda8",
-            "x-supplier-id-external": "95fdf020a1e668"
         }
     }
-
     wb_client = Wildberries(cookies=cookies['Request Cookies'])
     tokensjrpc = await sjrpc(wb_client)
     logging.info('Подключил ЛК')
